@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PgSqlQueue", "PgSqlQueue\PgSqlQueue.csproj", "{A7A1320A-DF7F-410D-82B2-E4E451E8C33A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producer", "Producer\Producer.csproj", "{50096E11-732E-4571-91D2-A775AA862AEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer", "Consumer\Consumer.csproj", "{7A035F88-11BE-403E-8B97-1554FF0F1CE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{A7A1320A-DF7F-410D-82B2-E4E451E8C33A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7A1320A-DF7F-410D-82B2-E4E451E8C33A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7A1320A-DF7F-410D-82B2-E4E451E8C33A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50096E11-732E-4571-91D2-A775AA862AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50096E11-732E-4571-91D2-A775AA862AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50096E11-732E-4571-91D2-A775AA862AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50096E11-732E-4571-91D2-A775AA862AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A035F88-11BE-403E-8B97-1554FF0F1CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A035F88-11BE-403E-8B97-1554FF0F1CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A035F88-11BE-403E-8B97-1554FF0F1CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A035F88-11BE-403E-8B97-1554FF0F1CE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
