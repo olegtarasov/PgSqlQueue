@@ -10,6 +10,7 @@ public class DbMigrator
         (
             id                  uuid        not null primary key,
             
+            index               integer not null,
             enqueue_time        timestamp with time zone not null ,
             partition_key       text,
             body                jsonb,

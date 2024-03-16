@@ -11,7 +11,7 @@ await using var source = NpgsqlDataSource.Create(
 var conversations = Enumerable.Range(0, 5).Select(x => x.ToString()).ToArray();
 var rnd = new Random();
 
-for (int i = 0; i < 50; i++)
+for (int i = 0; i < 500000; i++)
 {
     var conversation = conversations[rnd.Next(conversations.Length)];
     var messageId = Guid.NewGuid();
@@ -19,11 +19,14 @@ for (int i = 0; i < 50; i++)
     command.Parameters.AddRange(new NpgsqlParameter[]
                                 {
                                     new() {Value = messageId}, 
+                                    new() {Value = i + 1},
                                     new() {Value = DateTime.UtcNow},
                                     new() {Value = conversation},
                                     new() {Value = DBNull.Value, NpgsqlDbType = NpgsqlDbType.Jsonb}, 
                                     new() {Value = false}
                                 });
     int res = await command.ExecuteNonQueryAsync();
+    await using var notify = source.CreateCommand("NOTIFY ap_messages");
+    await notify.ExecuteNonQueryAsync();
     Console.WriteLine(res);
 }    

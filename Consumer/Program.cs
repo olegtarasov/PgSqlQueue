@@ -10,6 +10,7 @@ namespace Consumer
     {
         public static async Task Main(string[] args)
         {
+            Collector.Key = args[0];
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
@@ -28,6 +29,7 @@ namespace Consumer
                 {
                     services.AddHostedService<ConsumerService>(provider => new(
                         "Host=localhost;Port=5432;Database=assistant_platform;Username=postgres;Password=p@ssword"));
+                    services.AddHostedService<CollectorDumper>();
                 });
         }
     }
