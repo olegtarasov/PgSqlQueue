@@ -28,7 +28,7 @@ namespace Consumer
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<ConsumerService>(provider => new(
-                        "Host=localhost;Port=5432;Database=assistant_platform;Username=postgres;Password=p@ssword"));
+                        "Host=localhost;Port=5432;Database=pgsqlqueue;Username=postgres;Password=p@ssword"));
                     services.AddHostedService<CollectorDumper>();
                 });
         }

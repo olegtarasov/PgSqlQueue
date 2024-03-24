@@ -3,10 +3,10 @@ using NpgsqlTypes;
 using PgSqlQueue;
 
 await new DbMigrator()
-    .Migrate("Host=localhost;Port=5432;Database=assistant_platform;Username=postgres;Password=p@ssword");
+    .Migrate("Host=localhost;Port=5432;Database=pgsqlqueue;Username=postgres;Password=p@ssword");
 
 await using var source = NpgsqlDataSource.Create(
-    "Host=localhost;Port=5432;Database=assistant_platform;Username=postgres;Password=p@ssword");
+    "Host=localhost;Port=5432;Database=pgsqlqueue;Username=postgres;Password=p@ssword");
 
 var conversations = Enumerable.Range(0, 5).Select(x => x.ToString()).ToArray();
 var rnd = new Random();
